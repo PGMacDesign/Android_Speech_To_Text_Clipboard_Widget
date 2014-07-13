@@ -32,21 +32,10 @@ MediaPlayer ourIntroSong, doorClose; //Doorclose not used at this point, will se
 
 		super.onCreate(inputVariableToSendToSuperClass);
 		setContentView(R.layout.splash);
-
-		/*
-		//Remember: Sound pool used for small clips (gun, explosion, etc.) and Media player used for larger clips (background music)
-		ourIntroSong = MediaPlayer.create(SplashScreen.this, R.raw.cinematic_impact);
-		MediaPlayer doorClose = MediaPlayer.create(SplashScreen.this, R.raw.door_close_1);
 		
-		//getPrefs variable to determine if they have turned off the music preference in the introduction
-		SharedPreferences getPrefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-		boolean music = getPrefs.getBoolean("checkBox", true);
-		if (music == true){
-			ourIntroSong.start();
-		}
-	
-		 */
-		//Determines length of time splash screen is open
+		ourIntroSong = MediaPlayer.create(Splash.this, R.raw.cinematic_impact);
+		ourIntroSong.start();
+		
 		Thread timer = new Thread()
 		{
 			public void run()
@@ -74,7 +63,7 @@ MediaPlayer ourIntroSong, doorClose; //Doorclose not used at this point, will se
 		super.onPause();
 		
 		//This kills the music so it isn't carried over between splash screens
-		//ourIntroSong.release();
+		ourIntroSong.release();
 		
 		//Destroys the class when it goes on pause. Not ideal for most programs, but, for a splash screen, this works fine as we don't want it to show up again. 
 		finish(); 

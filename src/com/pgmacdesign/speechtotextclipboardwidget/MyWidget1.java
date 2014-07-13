@@ -22,15 +22,16 @@ import android.content.Context;
 import android.widget.RemoteViews;
 import android.widget.Toast;
 
-public class MyWidget extends AppWidgetProvider{
-
+public class MyWidget1 extends AppWidgetProvider{
+    
 	//When the widget is deleted, this will run, pop up window 
 	public void onDeleted(Context context, int[] appWidgetIds) {
 		super.onDeleted(context, appWidgetIds);
-		Toast.makeText(context, "Widget removed", Toast.LENGTH_SHORT).show();
+		Toast.makeText(context, "Widget Removed /Sad Panda", Toast.LENGTH_SHORT).show();
 		//Or do whatever here
 	}
 
+	
 	/*
 	 * When the widget updates (Every 1/2 hour in this example) @Params:
 	 *1) Context - Package name to refer to intents/ layouts
@@ -44,18 +45,18 @@ public class MyWidget extends AppWidgetProvider{
 		
 		//Amount of IDs entered
 		final int N = appWidgetIds.length;
-		
+
 		for (int i = 0; i < N; i++){
-			
+
 			int app_widget_ID = appWidgetIds[i];
 			//
 			RemoteViews v = new RemoteViews(context.getPackageName(), R.layout.widget);
 			
-			//Make changes here to UI. For example
-			v.setTextViewText(R.id.text_view_config_input, "Words and Stuff!");
-			
 			//Calls the method to update the widget. Affects this specific view
 			appWidgetManager.updateAppWidget(app_widget_ID, v);
+	
 		}	
 	}
+	
+	
 }
