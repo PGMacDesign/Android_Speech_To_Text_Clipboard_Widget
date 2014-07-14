@@ -59,7 +59,7 @@ public class SpeechToText extends Activity
 	            ArrayList<String> results = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
 	            String uberString = "";
 				for (int i = 0; i< results.size(); i++){
-					uberString = results.get(i).toString();
+					uberString = results.get(0).toString();
 				}
 				L.m(uberString);
 				
