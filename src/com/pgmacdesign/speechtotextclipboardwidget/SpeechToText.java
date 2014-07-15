@@ -60,6 +60,7 @@ public class SpeechToText extends Activity
 	            String uberString = "";
 				for (int i = 0; i< results.size(); i++){
 					uberString = results.get(0).toString();
+					L.m(results.get(i).toString()); //May need to attach these to a list to click the best translation 
 				}
 				L.m(uberString);
 				
