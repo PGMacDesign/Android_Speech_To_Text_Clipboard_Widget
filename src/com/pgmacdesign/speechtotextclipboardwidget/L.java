@@ -7,7 +7,7 @@ import android.widget.Toast;
 public class L {
 
 	public static void m(String message){
-		Log.d("VIVZ", message);
+		Log.d("Patrick Note", message);
 	}
 	
 	public static void makeToast(Context context, String message){

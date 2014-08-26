@@ -19,15 +19,24 @@ package com.pgmacdesign.speechtotextclipboardwidget;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
+import android.media.MediaPlayer;
+import android.util.Log;
 import android.widget.RemoteViews;
 import android.widget.Toast;
 
+//This class manages the widget itself
 public class MyWidget1 extends AppWidgetProvider{
-    
+
+	
 	//When the widget is deleted, this will run, pop up window 
 	public void onDeleted(Context context, int[] appWidgetIds) {
 		super.onDeleted(context, appWidgetIds);
-		Toast.makeText(context, "Widget Removed /Sad Panda", Toast.LENGTH_SHORT).show();
+
+		SadPanda sp = new SadPanda();		
+
+		sp.theSadPanda(context, "Widget Removed /Sad Panda");
+
+		//Toast.makeText(context, "Widget Removed /Sad Panda", Toast.LENGTH_SHORT).show();
 		//Or do whatever here
 	}
 

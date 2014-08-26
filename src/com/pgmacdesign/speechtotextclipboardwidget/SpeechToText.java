@@ -42,7 +42,7 @@ public class SpeechToText extends Activity
 	{
 	    Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
 	    intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
-	    intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Speak to search");
+	    intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Speak When You Hear The Beep");
 	    intent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 10);
 	    startActivityForResult(intent, SPEECH_REQUEST_CODE);
 	}
